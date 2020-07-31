@@ -1,0 +1,177 @@
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v50/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }
+  
+*{
+
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    position: absolute;
+    margin: 12px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px lightgray;
+    width: 100px;
+    border-radius: 10px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-53% ,0%);
+    text-align: center;
+    width: 410px;
+
+}
+.container .contselectcal{
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.container .contselectcal select{
+    background-color: rgb(245, 245, 245);
+    -webkit-appearance: none;
+    outline: none;
+    margin: 0;
+    padding: 1px;
+    padding-left: 6px;
+    height: 34px;
+    border: 2px solid rgb(220, 220, 220);;
+    border-radius: 4px;
+    width: 390px;
+}
+.container .contselectcal .material-dd-icon {
+    position: absolute;
+    left: 363px;
+    top: 1px;
+    pointer-events: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    transition: 0.2s linear;
+}
+.container .contselectcal:active .material-dd-icon{
+    transform: rotate(180deg);
+}
+button{
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    height: 35px;
+    width: 100px;
+    background-color: rgb(245, 245, 245);
+    border: 2px solid rgb(220, 220, 220);
+    border-radius: 4px;
+}
+button:active{
+    border-color: dodgerblue;
+    background-color: rgb(221, 221, 221);
+}
+
+.inputselect{
+    position: relative;
+    padding: 0px;
+    margin: 10px 0px 10px 0px;
+}
+.inputselect input{
+    outline: none;
+    border: 2px solid rgb(220, 220, 220);;
+    border-radius: 4px;
+    height: 30px;
+    text-align: right;
+    padding-right: 10px;
+    width: 160px;
+}
+
+.inputselect input:hover{
+    border-color: dodgerblue;
+}
+.inputselect input:focus{
+    border-color: rgb(230, 126, 34)
+}
+.inputselect .contselect{
+    display: inline;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.inputselect .contselect select{
+    background-color: rgb(245, 245, 245);
+    -webkit-appearance: none;
+    outline: none;
+    padding: 1px;
+    padding-left: 6px;
+    margin-left: 20px;
+    height: 34px;
+    border: 2px solid rgb(220, 220, 220);
+    border-radius: 4px;
+    width: 192px;
+}
+.inputselect .contselect select:hover{
+    border-color: dodgerblue;
+}
+
+.inputselect .contselect .material-dd-icon {
+    position: absolute;
+    left: 175px;
+    bottom: -6px;
+    pointer-events: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+    transition: 0.2s linear;
+}
+.inputselect .contselect:active .material-dd-icon{
+    transform: rotate(180deg);
+} 
+.bottom{
+    
+    font-size: 12px;
+    margin-left: 10px;
+}
+a{
+    color: rgb(135, 135, 135);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.author{
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    text-align: left;
+    width: 50px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+.author p{
+    background-color: rgb(250, 169, 49);
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-right: 5px;
+    border-radius: 4px;
+    color: white;
+}
+.author #formula{
+    background-color: white;
+    color: black;
+    white-space: nowrap;
+}
+.about{
+
+    float: left;
+}
+.feedback{
+    margin-right: 14px;
+    float: right;
+
+}

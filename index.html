@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="js/main.js"></script>
+    <title>Simple Calculator</title>
+</head>
+
+<body onload="script()">
+    <div class="container">
+        <div class="contselectcal">
+            <i class="material-dd-icon">arrow_drop_down</i>
+            <select id="areaSelector" onclick="showConverter(this.value)">
+        <option value="area" selected>Area</option>
+        <option value="datatransfer">Data Transfer Rate</option>
+        <option value="digitalstorage">Digital Storage</option>
+        <option value="energy">Energy</option>
+        <option value="frequency">Frequency</option>
+        <option value="fueleconomy">Fuel Economy</option>
+        <option value="length">Length</option>
+        <option value="mass">Mass</option>
+        <option value="planeangle">Plane Angle</option>
+        <option value="pressure">Pressure</option>
+        <option value="speed">Speed</option>
+        <option value="temperature">Temperature</option>
+        <option value="time">Time</option>
+        <option value="volume">Volume</option>
+      </select>
+        </div>
+
+        <!-- area Area -->
+        <div id="area">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="areaInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="areaselect1" onclick="unitValidate('areaselect1','areaselect2')">
+            <option selected>square kilometres</option>
+            <option>square metres</option>
+            <option>Square mile</option>
+            <option>Square yard</option>
+            <option>Square foot</option>
+            <option>Square inch</option>
+            <option>Hectare</option>
+            <option>Acre</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="areaInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="areaselect2" onclick="unitValidate('areaselect1','areaselect2')">
+            <option>square kilometres</option>
+            <option selected>square metres</option>
+            <option>Square mile</option>
+            <option>Square yard</option>
+            <option>Square foot</option>
+            <option>Square inch</option>
+            <option>Hectare</option>
+            <option>Acre</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Data Transfer -->
+        <div id="datatransfer" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="dataInput1" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="dataselect1" onclick="unitValidate('dataselect1','dataselect2')">
+            <option selected>Bit per second</option>
+            <option>Kilobit per second</option>
+            <option>Kilobyte per second</option>
+            <option>Kibibit per second</option>
+            <option>Megabit per second</option>
+            <option>Megabyte per second</option>
+            <option>Mebibit per second</option>
+            <option>Gigabit per second</option>
+            <option>Gigabyte per second</option>
+            <option>Gibibit per second</option>
+            <option>Terabit per second</option>
+            <option>Terabyte per second</option>
+            <option>Tebibit per second</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="dataInput2" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="dataselect2" onclick="unitValidate('dataselect1','dataselect2')">
+            <option>Bit per second</option>
+            <option selected>Kilobit per second</option>
+            <option>Kilobyte per second</option>
+            <option>Kibibit per second</option>
+            <option>Megabit per second</option>
+            <option>Megabyte per second</option>
+            <option>Mebibit per second</option>
+            <option>Gigabit per second</option>
+            <option>Gigabyte per second</option>
+            <option>Gibibit per second</option>
+            <option>Terabit per second</option>
+            <option>Terabyte per second</option>
+            <option>Tebibit per second</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Digital Storage -->
+        <div id="digitalstorage" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="storageInput1" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="storageselect1" onclick="unitValidate('storageselect1','storageselect2')">
+            <option>Bit</option>
+            <option>Kilobit</option>
+            <option>Kibibit</option>
+            <option>Megabit</option>
+            <option>Mebibit</option>
+            <option>Gigabit</option>
+            <option>Gibibit</option>
+            <option>Terabit</option>
+            <option>Tebibit</option>
+            <option>Petabit</option>
+            <option>Pebibit</option>
+            <option selected>Byte</option>
+            <option>Kilobyte</option>
+            <option>Kibibyte</option>
+            <option>Megabyte</option>
+            <option>Mebibyte</option>
+            <option>Gigabyte</option>
+            <option>Gibibyte</option>
+            <option>Terabyte</option>
+            <option>Tebibyte</option>
+            <option>Petabyte</option>
+            <option>Pebibyte</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="storageInput2" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="storageselect2" onclick="unitValidate('storageselect1','storageselect2')">
+            <option>Bit</option>
+            <option>Kilobit</option>
+            <option>Kibibit</option>
+            <option>Megabit</option>
+            <option>Mebibit</option>
+            <option>Gigabit</option>
+            <option>Gibibit</option>
+            <option>Terabit</option>
+            <option>Tebibit</option>
+            <option>Petabit</option>
+            <option>Pebibit</option>
+            <option>Byte</option>
+            <option selected>Kilobyte</option>
+            <option>Kibibyte</option>
+            <option>Megabyte</option>
+            <option>Mebibyte</option>
+            <option>Gigabyte</option>
+            <option>Gibibyte</option>
+            <option>Terabyte</option>
+            <option>Tebibyte</option>
+            <option>Petabyte</option>
+            <option>Pebibyte</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Energy -->
+        <div id="energy" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="energyInput1" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="energyselect1" onclick="unitValidate('energyselect1','energyselect2')">
+            <option selected>Joule</option>
+            <option>Kilojoule</option>
+            <option>Gram calorie</option>
+            <option>Kilocalorie</option>
+            <option>Watt hour</option>
+            <option>kilowatt hours</option>
+            <option>Electronvolt</option>
+            <option>British thermal unit</option>
+            <option>US therm</option>
+            <option>Foot-pound</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="energyInput2" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="energyselect2" onclick="unitValidate('energyselect1','energyselect2')">
+            <option>Joule</option>
+            <option>Kilojoule</option>
+            <option>Gram calorie</option>
+            <option selected>Kilocalorie</option>
+            <option>Watt hour</option>
+            <option>kilowatt hours</option>
+            <option>Electronvolt</option>
+            <option>British thermal unit</option>
+            <option>US therm</option>
+            <option>Foot-pound</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Frequency -->
+        <div id="frequency" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="frequencyInput1" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="frequencyselect1" onclick="unitValidate('frequencyselect1','frequencyselect2')">
+            <option selected>Hertz</option>
+            <option>Kilohertz</option>
+            <option>Megahertz</option>
+            <option>Gigahertz</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="frequencyInput2" onclick="this.select()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="frequencyselect2" onclick="unitValidate('frequencyselect1','frequencyselect2')">
+            <option>Hertz</option>
+            <option selected>Kilohertz</option>
+            <option>Megahertz</option>
+            <option>Gigahertz</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Fuel Economy -->
+        <div id="fueleconomy" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="fuelInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="fuelselect1" onclick="unitValidate('fuelselect1','fuelselect2')">
+            <option>Miles per US gallon</option>
+            <option>Miles per gallon</option>
+            <option selected>Kilometre per litre</option>
+            <option>Litres per 100 kilometres</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="fuelInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="fuelselect2" onclick="unitValidate('fuelselect1','fuelselect2')">
+            <option selected>Miles per US gallon</option>
+            <option>Miles per gallon</option>
+            <option>Kilometre per litre</option>
+            <option>Litres per 100 kilometres</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Length -->
+        <div id="length" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="lengthInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="lengthselect1" onclick="unitValidate('lengthselect1','lengthselect2')">
+            <option>Kilometer</option>
+            <option selected>Meter</option>
+            <option>Centimeters</option>
+            <option>Milimeters</option>
+            <option>Micrometers</option>
+            <option>Nanometers</option>
+            <option>Mile</option>
+            <option>Yard</option>
+            <option>Foot</option>
+            <option>Inch</option>
+            <option>Nutical Mile</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="100" id="lengthInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="lengthselect2" onclick="unitValidate('lengthselect1','lengthselect2')">
+            <option>Kilometer</option>
+            <option>Meter</option>
+            <option selected>Centimeters</option>
+            <option>Milimeters</option>
+            <option>Micrometers</option>
+            <option>Nanometers</option>
+            <option>Mile</option>
+            <option>Yard</option>
+            <option>Foot</option>
+            <option>Inch</option>
+            <option>Nutical Mile</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Mass -->
+        <div id="mass" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="massInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="massselect1" onclick="unitValidate('massselect1','massselect2')">
+            <option>Tonnes</option>
+            <option selected>Kilogram</option>
+            <option>Gram</option>
+            <option>Milligram</option>
+            <option>Microgram</option>
+            <option>Imperial ton</option>
+            <option>US ton</option>
+            <option>Stone</option>
+            <option>Pound</option>
+            <option>Ounce</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="massInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="massselect2" onclick="unitValidate('massselect1','massselect2')">
+            <option>Tonnes</option>
+            <option>Kilogram</option>
+            <option selected>Gram</option>
+            <option>Milligram</option>
+            <option>Microgram</option>
+            <option>Imperial ton</option>
+            <option>US ton</option>
+            <option>Stone</option>
+            <option>Pound</option>
+            <option>Ounce</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Plane Angle -->
+        <div id="planeangle" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="angleInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="angleselect1" onclick="unitValidate('angleselect1','angleselect2')">
+            <option selected>Degree</option>
+            <option>Gradian</option>
+            <option>Milliradian</option>
+            <option>Minute of arc</option>
+            <option>Radian</option>
+            <option>Second of arc</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="angleInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="angleselect2" onclick="unitValidate('angleselect1','angleselect2')">
+            <option>Degree</option>
+            <option>Gradian</option>
+            <option>Milliradian</option>
+            <option>Minute of arc</option>
+            <option selected>Radian</option>
+            <option>Second of arc</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Preasure -->
+        <div id="pressure" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="pressureInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="pressureselect1" onclick="unitValidate('pressureselect1','pressureselect2')">
+            <option>Bar</option>
+            <option selected>Pascal</option>
+            <option>Pound-force per square inch</option>
+            <option>Standard atmosphere</option>
+            <option>Torr</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="pressureInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="pressureselect2" onclick="unitValidate('pressureselect1','pressureselect2')">
+            <option selected>Bar</option>
+            <option>Pascal</option>
+            <option>Pound-force per square inch</option>
+            <option>Standard atmosphere</option>
+            <option>Torr</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Speed -->
+        <div id="speed" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="speedInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="speedselect1" onclick="unitValidate('speedselect1','speedselect2')">
+            <option>Miles per hour</option>
+            <option>Foot per second</option>
+            <option selected>Metres per second</option>
+            <option>Kilometres per hour</option>
+            <option>Knot</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="speedInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="speedselect2" onclick="unitValidate('speedselect1','speedselect2')">
+            <option>Miles per hour</option>
+            <option>Foot per second</option>
+            <option>Metres per second</option>
+            <option selected>Kilometres per hour</option>
+            <option>Knot</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Temperature -->
+        <div id="temperature" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="0" id="tempInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="tempselect1" onclick="unitValidate('tempselect1','tempselect2')">
+            <option selected>Celsius</option>
+            <option>Fahrenhite</option>
+            <option>Kelvin</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="32" id="tempInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="tempselect2" onclick="unitValidate('tempselect1','tempselect2')">
+            <option>Celsius</option>
+            <option selected>Fahrenhite</option>
+            <option>Kelvin</option>
+          </select>
+                </div>
+            </div>
+        </div>
+        <!-- area Time -->
+        <div id="time" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="timeInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="timeselect1" onclick="unitValidate('timeselect1','timeselect2')">
+            <option>Nanosecond</option>
+            <option>Microsecond</option>
+            <option>Millisecond</option>
+            <option selected>Second</option>
+            <option>Minute</option>
+            <option>Hour</option>
+            <option>Day</option>
+            <option>Week</option>
+            <option>Month</option>
+            <option>Calendar year</option>
+            <option>Decade</option>
+            <option>Century</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="timeInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="timeselect2" onclick="unitValidate('timeselect1','timeselect2')">
+            <option>Nanosecond</option>
+            <option>Microsecond</option>
+            <option>Millisecond</option>
+            <option>Second</option>
+            <option selected>Minute</option>
+            <option>Hour</option>
+            <option>Day</option>
+            <option>Week</option>
+            <option>Month</option>
+            <option>Calendar year</option>
+            <option>Decade</option>
+            <option>Century</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- area Volume -->
+        <div id="volume" style="display: none;">
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="volumeInput1" onclick="this.select()" oninput="onInput1()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="volumeselect1" onclick="unitValidate('volumeselect1','volumeselect2')">
+            <option>US liquid gallon</option>
+            <option>US liquid quart</option>
+            <option>US liquid pint</option>
+            <option>US legal cup</option>
+            <option>US fluid ounces</option>
+            <option>US tablespoon</option>
+            <option>US teaspoon</option>
+            <option>Cubic metres</option>
+            <option selected>Litres</option>
+            <option>Millilitres</option>
+            <option>Gallons</option>
+            <option>Imperial quart</option>
+            <option>Imperial pint</option>
+            <option>Imperial cup</option>
+            <option>Imperial fluid ounces</option>
+            <option>Imperial tablespoon</option>
+            <option>Imperial teaspoon</option>
+            <option>Cubic foot</option>
+            <option>Cubic inch</option>
+          </select>
+                </div>
+            </div>
+            <div class="inputselect">
+                <input type="text" name="input" value="1" id="volumeInput2" onclick="this.select()" oninput="onInput2()">
+                <div class="contselect">
+                    <i class="material-dd-icon">arrow_drop_down</i>
+                    <select class="select" id="volumeselect2" onclick="unitValidate('volumeselect1','volumeselect2')">
+            <option>US liquid gallon</option>
+            <option>US liquid quart</option>
+            <option>US liquid pint</option>
+            <option>US legal cup</option>
+            <option>US fluid ounces</option>
+            <option>US tablespoon</option>
+            <option>US teaspoon</option>
+            <option>Cubic metres</option>
+            <option>Litres</option>
+            <option selected>Millilitres</option>
+            <option>Gallons</option>
+            <option>Imperial quart</option>
+            <option>Imperial pint</option>
+            <option>Imperial cup</option>
+            <option>Imperial fluid ounces</option>
+            <option>Imperial tablespoon</option>
+            <option>Imperial teaspoon</option>
+            <option>Cubic foot</option>
+            <option>Cubic inch</option>
+          </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="author">
+                <p>Formula</p>
+                <p id="formula">soumen</p>
+            </div>
+            <div class="about"><a href="">More info</a></div>
+            <div class="feedback"><a href="">Feedback</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
